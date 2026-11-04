@@ -9,7 +9,7 @@ For each year in `YEARS`, the script covers 1 March – 31 March and:
 | Sensor | Collection | Processing | Output bands |
 |---|---|---|---|
 | Sentinel-2 | `COPERNICUS/S2_SR_HARMONIZED` | Scene cloud cover < 20 %, QA60 cloud + cirrus mask, median composite | B2, B3, B4, B8, B8A, B11, B12 |
-| Sentinel-1 | `COPERNICUS/S1_GRD` | IW mode, VV polarisation, ascending pass, median composite | VV |
+| Sentinel-1 | `COPERNICUS/S1_GRD` | IW mode, VV polarisation, descending pass, median composite | VV |
 
 Both composites are clipped to the Punjab boundary, added to the map for inspection, and queued as export tasks.
 
@@ -45,7 +45,7 @@ Punjab_Exports/
     └── Sentinel-1/Punjab_S1_VV_Median_March_<year>.tif
 ```
 
-Up to 18 export tasks are created (2 per year). A Sentinel-1 task is only created if VV data exists for that year (e.g. none are produced if no ascending IW scenes are available).
+Up to 18 export tasks are created (2 per year). A Sentinel-1 task is only created if VV data exists for that year (e.g. none are produced if no descending IW scenes are available).
 
 ## Notes
 

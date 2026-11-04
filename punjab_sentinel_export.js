@@ -20,7 +20,7 @@ function loadSentinel1Median(dateRange,roi){
     .filterBounds(roi)
     .filter(ee.Filter.eq('instrumentMode','IW'))
     .filter(ee.Filter.listContains('transmitterReceiverPolarisation','VV'))
-    .filter(ee.Filter.eq('orbitProperties_pass','ASCENDING'));
+    .filter(ee.Filter.eq('orbitProperties_pass','DESCENDING'));
   return col.median().clip(roi);
 }
 
